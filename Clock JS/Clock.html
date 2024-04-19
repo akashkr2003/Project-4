@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: black;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    nav ul {
+        height: 58px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    nav ul li {
+        list-style: none;
+        padding: 0 18px;
+
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        font-weight: bolder;
+    }
+
+    .container {
+        font-size: medium;
+        position: relative;
+        left: 120px;
+        top: 120px;
+
+    }
+
+    .display {
+        font-size: 75px;
+    }
+
+    .lead {
+        font-size: 50px;
+        padding: 36px 0;
+    }
+
+    p {
+        font-size: 38px;
+    }
+
+    button {
+        margin: 15px 0;
+        padding: 10px;
+        border: 2px solid blue;
+        background: #0d6efd;
+        color: white;
+        border-radius: 8px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+</style>
+<script>
+    setInterval(() => {
+        let a;
+        let date;
+        let time;
+
+        a = new Date();
+        date = a.toLocaleDateString()
+        time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds()
+        document.getElementById('time').innerHTML = time + " on " + date
+    }, 1000); 
+</script>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">NavBar</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">disabled</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container my-4">
+            <div class="jumbotron">
+                <h1 class="display">Time Is : <span id="time"></span></h1>
+                <p class="lead">lets see the time</p>
+                <hr class="my-4">
+                <p>
+                    lets do it
+                </p>
+                <button> <b>Browse</b></button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
